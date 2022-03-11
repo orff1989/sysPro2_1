@@ -6,6 +6,8 @@
 
 using namespace std;
 
+
+
 string ariel::mat(int col, int row, char ch1, char ch2) {
 
     //throwing exception if the col or row is not valid
@@ -17,18 +19,20 @@ string ariel::mat(int col, int row, char ch1, char ch2) {
     int r=row;
     int i=0;
     char ch=ch1;
-    float mid = float(c)/2.0;
-    //vector<vector<char>> m( row , vector<char> (col));
-    char m[row][col];
+    vector<vector<char>> m( row , vector<char> (col));
+    double mid = double(c)/2;
+    
     
     //iterating over all the mat, and assigning the right char
-    while(i <= mid){
+    while(i <= mid && i<row){
         for(int j=i; j<r; j++){
             m[j][i]=ch;
         }
-        if(col==1) {break;}
+        if(col==1){
+            break;
+            }
 
-        for(int j=i; j<c-1; j++){
+        for(int j=i; j<c; j++){
             m[i][j]=ch;
         }
         for(int j=row-i-1; j>=i; j--){
@@ -49,19 +53,15 @@ string ariel::mat(int col, int row, char ch1, char ch2) {
     
     for(int i=0; i<row; i++){
        for(int j=0; j<col; j++){
-       ans=ans+string(1,m[i][j]);
+       ans.append(1,m[i][j]);
       }
-      if(i<row-1)ans=ans+"\n";
+
+      if(i<row-1){
+         ans.append(1,'\n');}
       }
     
 
     return ans;
 }
 
-// int main()
-// {
-//     string s = ariel::mat(13, 5, '@', '-'); 
-//     cout<<s<<endl;
-//     return 0;
-// }
 
