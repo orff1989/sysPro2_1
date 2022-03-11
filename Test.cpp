@@ -74,7 +74,7 @@ TEST_CASE("Good input")
                                                     "&\n"
                                                     "&\n"
                                                     "&\n"
-                                                    "&"));
+                                                    "&\n"));
 
     CHECK(nospaces(mat(7, 1, '@', '-')) == nospaces("@@@@@@@"));
 
@@ -87,7 +87,7 @@ TEST_CASE("Good input")
                                                      "@-@-@\n"
                                                      "@-@-@\n"
                                                      "@-@-@\n"
-                                                     "@-@-@\n"
+                                                     "@---@\n"
                                                      "@@@@@\n"));
 
     CHECK(nospaces(mat(3, 3, '8', 'x')) == nospaces("888\n"
